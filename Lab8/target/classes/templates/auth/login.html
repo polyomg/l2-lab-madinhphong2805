@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        form { max-width: 360px; }
+        label { display: inline-block; width: 100px; }
+        input { width: 240px; padding: 6px; margin: 4px 0; }
+        button { padding: 8px 12px; }
+        i { color: #c00; display: block; margin-bottom: 12px; }
+    </style>
+    </head>
+<body>
+    <i th:text="${message}">Error message</i>
+    <form action="/auth/login" method="post">
+        <label>Username:</label>
+        <input name="username">
+        <br>
+        <label>Password:</label>
+        <input name="password" type="password">
+        <hr>
+        <button>Login</button>
+    </form>
+</body>
+</html>
+
+

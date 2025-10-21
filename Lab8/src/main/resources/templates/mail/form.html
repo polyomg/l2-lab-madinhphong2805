@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Mail</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        form { max-width: 600px; }
+        label { display: inline-block; width: 120px; vertical-align: top; }
+        input, textarea { width: 440px; padding: 6px; margin: 4px 0; }
+        textarea { height: 160px; }
+        button { padding: 8px 12px; }
+        .row { margin-bottom: 6px; }
+        i { color: #090; display: block; margin-bottom: 12px; }
+    </style>
+    </head>
+<body>
+    <h2>Send Email</h2>
+    <i th:text="${message}">Message</i>
+    <form method="post" action="/mail/send-direct">
+        <div class="row">
+            <label>From:</label>
+            <input name="from" value="WebShop &lt;web-shop@gmail.com&gt;">
+        </div>
+        <div class="row">
+            <label>To:</label>
+            <input name="to">
+        </div>
+        <div class="row">
+            <label>CC:</label>
+            <input name="cc">
+        </div>
+        <div class="row">
+            <label>BCC:</label>
+            <input name="bcc">
+        </div>
+        <div class="row">
+            <label>Subject:</label>
+            <input name="subject">
+        </div>
+        <div class="row">
+            <label>Body (HTML):</label>
+            <textarea name="body"></textarea>
+        </div>
+        <div class="row">
+            <label>Attachments:</label>
+            <input name="filenames" placeholder="c:/path/a.pdf, d:/path/b.jpg">
+        </div>
+        <div class="row">
+            <button type="submit">Send Direct</button>
+            <button type="submit" formaction="/mail/send-queue">Queue Send</button>
+        </div>
+    </form>
+</body>
+</html>
+
+
