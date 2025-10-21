@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PS39422 Lab7 - JPA Repository</title>
+</head>
+<body>
+    <div>
+        <h1>PS39422 Lab7 - JPA Repository</h1>
+        
+        <div>
+            <h3>Bài 1: Tìm kiếm sản phẩm theo khoảng giá (JPQL)</h3>
+            <p>Tìm kiếm sản phẩm trong khoảng giá từ min đến max sử dụng @Query với JPQL</p>
+            <a href="/product/search">Tìm kiếm theo giá</a>
+        </div>
+        
+        <div>
+            <h3>Bài 2: Tìm kiếm và phân trang (JPQL)</h3>
+            <p>Tìm kiếm sản phẩm theo tên kết hợp với phân trang sử dụng @Query với JPQL</p>
+            <a href="/product/search-and-page">Tìm kiếm và phân trang</a>
+        </div>
+        
+        <div>
+            <h3>Bài 3: Báo cáo tồn kho theo loại</h3>
+            <p>Hiển thị báo cáo tổng hợp dữ liệu tồn kho theo từng loại sản phẩm</p>
+            <a href="/report/inventory-by-category">Báo cáo tồn kho</a>
+        </div>
+        
+        <div>
+            <h3>Bài 4: Tìm kiếm sản phẩm theo khoảng giá (DSL)</h3>
+            <p>Tìm kiếm sản phẩm trong khoảng giá từ min đến max sử dụng DSL</p>
+            <a href="/product/search-dsl">Tìm kiếm theo giá (DSL)</a>
+        </div>
+        
+        <div>
+            <h3>Bài 5: Tìm kiếm và phân trang (DSL)</h3>
+            <p>Tìm kiếm sản phẩm theo tên kết hợp với phân trang sử dụng DSL</p>
+            <a href="/product/search-and-page-dsl">Tìm kiếm và phân trang (DSL)</a>
+        </div>
+        
+        <div>
+            <h3>H2 Database Console</h3>
+            <p>Truy cập H2 Database Console để xem dữ liệu</p>
+            <a href="/h2-console" target="_blank">H2 Console</a>
+        </div>
+    </div>
+</body>
+</html>

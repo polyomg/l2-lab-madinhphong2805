@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+    
+    <div th:if="${message}" th:text="${message}" style="color: red;"></div>
+    
+    <form action="/account/login" method="post">
+        <div>
+            <label>Username:</label>
+            <input name="username" type="text" placeholder="Nhập username">
+        </div>
+        <br>
+        <div>
+            <label>Password:</label>
+            <input name="password" type="password" placeholder="Nhập password">
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" name="remember" value="true">
+            <label>Ghi nhớ tài khoản</label>
+        </div>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    
+    <p><strong>Thông tin đăng nhập:</strong></p>
+    <p>Username: poly</p>
+    <p>Password: 123</p>
+</body>
+</html>

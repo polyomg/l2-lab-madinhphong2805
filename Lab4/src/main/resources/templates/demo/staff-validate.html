@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Information Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .info { background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .field { margin: 10px 0; }
+        .label { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Staff Information Result</h1>
+    
+    <div class="info">
+        <i th:text="${message}"></i>
+    </div>
+    
+    <div th:if="${staff}">
+        <h2>Thông tin nhân viên:</h2>
+        <div class="field">
+            <span class="label">Email:</span> <span th:text="${staff.id}"></span>
+        </div>
+        <div class="field">
+            <span class="label">Họ và tên:</span> <span th:text="${staff.fullname}"></span>
+        </div>
+        <div class="field">
+            <span class="label">Giới tính:</span> 
+            <span th:if="${staff.gender == true}">Nam</span>
+            <span th:if="${staff.gender == false}">Nữ</span>
+        </div>
+        <div class="field">
+            <span class="label">Ngày sinh:</span> <span th:text="${#dates.format(staff.birthday, 'MM/dd/yyyy')}"></span>
+        </div>
+        <div class="field">
+            <span class="label">Hình ảnh:</span> <span th:text="${staff.photo}"></span>
+        </div>
+        <div class="field">
+            <span class="label">Cấp bậc:</span> 
+            <span th:if="${staff.level == 0}">Úy</span>
+            <span th:if="${staff.level == 1}">Tá</span>
+            <span th:if="${staff.level == 2}">Tướng</span>
+        </div>
+        <div class="field">
+            <span class="label">Salary:</span> <span th:text="${staff.salary}"></span>
+        </div>
+    </div>
+    
+    <hr>
+    <a href="/staff/create/form">Quay lại form</a> | 
+    <a href="/home/index">Trang chủ</a>
+</body>
+</html>
